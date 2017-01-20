@@ -119,14 +119,14 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
         expandableListAdapter = new ListAdapter_BTLE_Services(
                 this, services_ArrayList, characteristics_HashMapList);
 
-      /*  expandableListView = (ExpandableListView) findViewById(R.id.lv_expandable);
+        expandableListView = (ExpandableListView) findViewById(R.id.expandable);
         expandableListView.setAdapter(expandableListAdapter);
-        expandableListView.setOnChildClickListener(this);*/
+        expandableListView.setOnChildClickListener(this);
 
         ((TextView) findViewById(R.id.tv_name)).setText(name + " Services");
         ((TextView) findViewById(R.id.tv_address)).setText(address);
 
-        mEdit   = (EditText)findViewById(R.id.editText);
+       // mEdit   = (EditText)findViewById(R.id.editText);
     }
 
     @Override
@@ -176,7 +176,8 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
                 services_ArrayList.get(groupPosition).getUuid().toString())
                 .get(childPosition);
 
-        //UUID for Writing is 0000fff2-0000-1000-8000-00805f9b34fb
+        //UUID Characteristic for Writing is 0000fff2-0000-1000-8000-00805f9b34fb
+        //UUID Services are
 
         if (Utils.hasWriteProperty(characteristic.getProperties()) != 0) {
             String uuid = characteristic.getUuid().toString();
@@ -254,14 +255,15 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
     }
 
     public void read(View view) {
-
+    for(int i = 0; i <characteristics_HashMapList.size(); i ++ )
+    {
         BluetoothGattCharacteristic characteristic = characteristics_HashMapList.get(
                 services_ArrayList.get(3).getUuid().toString())
                 .get(0);
 
-        mBTLE_Service.readCharacteristic(characteristic);
+        mBTLE_Service.readCharacteristic(characteristic);}
 
-        BluetoothGattCharacteristic characteristic2 = characteristics_HashMapList.get(
+       /* BluetoothGattCharacteristic characteristic2 = characteristics_HashMapList.get(
                 services_ArrayList.get(3).getUuid().toString())
                 .get(1);
 
@@ -271,7 +273,7 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
                 services_ArrayList.get(3).getUuid().toString())
                 .get(2);
 
-        mBTLE_Service.readCharacteristic(characteristic3);
+        mBTLE_Service.readCharacteristic(characteristic3);*/
 
 
     }}

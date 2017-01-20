@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="android.conorsouness.BLETemplate.Activity_BTLE_Characteristic">
+    tools:context="android.conorsouness.BLETemplate.Dialog_BTLE_Characteristic">
 
     <LinearLayout
         android:layout_width="match_parent"
