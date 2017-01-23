@@ -93,6 +93,7 @@ public class Service_BTLE_GATT extends Service {
 
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 broadcastUpdate(ACTION_DATA_AVAILABLE, characteristic);
+               Log.e("READ VALUE:" ,characteristic.getStringValue(0));
             }
         }
 

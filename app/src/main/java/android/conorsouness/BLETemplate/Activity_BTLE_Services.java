@@ -244,6 +244,20 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
             BluetoothGattCharacteristic characteristic = characteristics_HashMapList.get(
                     services_ArrayList.get(3).getUuid().toString())
                     .get(1);
+            Log.i("SERVICE0",services_ArrayList.get(0).getUuid().toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(0).getUuid().toString()).get(0).toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(0).getUuid().toString()).get(1).toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(0).getUuid().toString()).get(2).toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(0).getUuid().toString()).get(3).toString());
+
+
+            Log.i("SERVICE1",services_ArrayList.get(1).getUuid().toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(1).getUuid().toString()).get(0).toString());
+
+
+            Log.i("SERVICE2",services_ArrayList.get(2).getUuid().toString());
+            Log.i("SERVICE0",characteristics_HashMapList.get(services_ArrayList.get(2).getUuid().toString()).get(0).toString());
+            Log.i("SERVICE3",services_ArrayList.get(3).getUuid().toString());
 
             dialog_btle_characteristic.setTitle(UUID_SERIAL_PORT_PROFILE);
             dialog_btle_characteristic.setService(mBTLE_Service);
@@ -260,18 +274,6 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
                 .get(0);
 
         mBTLE_Service.readCharacteristic(characteristic);
-
-        BluetoothGattCharacteristic characteristic2 = characteristics_HashMapList.get(
-                services_ArrayList.get(3).getUuid().toString())
-                .get(1);
-
-        mBTLE_Service.readCharacteristic(characteristic2);
-
-        BluetoothGattCharacteristic characteristic3 = characteristics_HashMapList.get(
-                services_ArrayList.get(3).getUuid().toString())
-                .get(2);
-
-        mBTLE_Service.readCharacteristic(characteristic3);
 
 
     }}
