@@ -126,7 +126,7 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
         ((TextView) findViewById(R.id.tv_name)).setText(name + " Services");
         ((TextView) findViewById(R.id.tv_address)).setText(address);
 
-        //mEdit   = (EditText)findViewById(R.id.editText);
+        mEdit   = (EditText)findViewById(R.id.editText);
     }
 
     @Override
