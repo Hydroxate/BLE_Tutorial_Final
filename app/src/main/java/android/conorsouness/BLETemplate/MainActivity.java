@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private BroadcastReceiver_BTState mBTStateUpdateReceiver;
     private Scanner_BTLE mBTLeScanner;
 
-
+    //Allen comment
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
