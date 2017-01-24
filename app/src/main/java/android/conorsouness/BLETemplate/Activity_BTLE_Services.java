@@ -59,6 +59,8 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
     private BTLE_Device ble;
     private BroadcastReceiver_BTLE_GATT mGattUpdateReceiver;
 
+
+
     EditText mEdit;
 
     private String name;
@@ -269,11 +271,20 @@ public class Activity_BTLE_Services extends AppCompatActivity implements Expanda
 
     public void read(View view) {
 
+
         BluetoothGattCharacteristic characteristic = characteristics_HashMapList.get(
                 services_ArrayList.get(3).getUuid().toString())
-                .get(0);
+                .get(1);
 
         mBTLE_Service.readCharacteristic(characteristic);
+        Toast.makeText(mBTLE_Service, characteristic.getStringValue(0), Toast.LENGTH_SHORT).show();
+
+        ((TextView) findViewById(R.id.ReceivedValue)).setText(characteristic.getStringValue(0));
+
+
+
+
+
 
 
     }}
